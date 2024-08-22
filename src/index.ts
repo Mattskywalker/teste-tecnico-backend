@@ -1,10 +1,14 @@
+import 'dotenv/config';
 import express from 'express';
-// import demoRoutes from './routes/demoRoutes';
+import { errorMiddleware } from 'middlewares/errorMiddleware';
+import demoRoutes from 'routes/demoRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
+app.use('/', demoRoutes);
+app.use(errorMiddleware);
 
 app.get('/', (req, res) => {
   res.send('Servidor rodando!');
