@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon",
-    "seed": "node scripts/seedDb.js",
+    "seed": "ts-node -r tsconfig-paths/register scripts/seedDb.js",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier --write src"
@@ -12,7 +12,9 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "4.17.1",
+    "pg": "^8.12.0",
     "sequelize": "^6.23.0",
     "sqlite3": "^5.0.0"
   },
@@ -24,7 +26,9 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "nodemon": "^2.0.22",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4"
   },
   "engines": {
