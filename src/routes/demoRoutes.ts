@@ -1,18 +1,10 @@
 import { Router } from 'express';
-import * as demoController from 'controllers/demoControler';
+import * as demoController from 'controllers/demoController';
 
-// const express = require('express');
-// const bodyParser = require('body-parser');
-// const {sequelize} = require('./model')
-// const app = express();
-// app.use(bodyParser.json());
-// app.set('sequelize', sequelize)
-// app.set('models', sequelize.models)
+const demosRouter = Router();
 
-// app.get('/demos', async (req, res) => {
-// });
+demosRouter.get('/demos', demoController.getDemos);
 
-// app.put('/frames/:id', async (req, res) => {
-// });
+demosRouter.put('/frames/:id', demoController.updateFrames);
 
-// module.exports = app;
+export default demosRouter;
