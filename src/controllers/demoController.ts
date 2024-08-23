@@ -16,6 +16,19 @@ export const getDemos = async (
   }
 };
 
+export const getDemoFrames = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    console.log(req.params.demoid);
+    res.json(await demoService.getDemoFramesById(req.params.demoid));
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const updateFrames = (
   req: Request,
   res: Response,
