@@ -7,6 +7,10 @@ demosRouter.get('/demos', demoController.getDemos);
 
 demosRouter.get('/demo/:demoid/frames', demoController.getDemoFrames);
 
-demosRouter.put('/frames/:id', demoController.updateFrames);
+demosRouter.get('/demo/:demoid', demoController.getDemoById);
+
+demosRouter.get('/frame/:frameid', demoController.getFrame);
+
+demosRouter.put('/frame/:id', demoController.updateFrame);
 
 export default demosRouter;
