@@ -47,8 +47,6 @@ export const getFrame = async (
   next: NextFunction,
 ) => {
   try {
-    console.log(req.params.frameid);
-
     res.json(await demoService.getFrame(req.params.frameid));
   } catch (error) {
     next(error);
