@@ -1,5 +1,5 @@
 import { FrameDTO, IFrameModel } from 'models/interfaces/demos';
-import { Demo, Frame } from 'models/model';
+import { Demo, Frame, FrameEvent } from 'models/model';
 
 export default class DemoService {
   async updateFrame(frame: FrameDTO) {
@@ -19,7 +19,12 @@ export default class DemoService {
 
   async getFrame(frameId: string) {
     try {
-      return await Frame.findByPk(frameId);
+      return await Frame.findByPk(frameId, {
+        include: {
+          model: FrameEvent,
+          as: 'event',
+        },
+      });
     } catch (e) {
       throw new Error(`GET FRAME ${e}`);
     }
@@ -38,6 +43,10 @@ export default class DemoService {
       return await Frame.findAll({
         where: {
           demoId,
+        },
+        include: {
+          model: FrameEvent,
+          as: 'event',
         },
         order: [['order', 'ASC']],
       });
