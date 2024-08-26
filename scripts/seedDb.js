@@ -8,7 +8,7 @@ const demoEventList = [
     selectors: '[data-testid="welcome-login-button"]',
     event: 'click',
     title: 'Vamos começar? ▶️',
-    text: 'Clique aqui para fazer login e iniciesua demonstração no ChatGPT. Basta ir clicando nos pontos indicados ao longo da jornada.',
+    text: 'Clique aqui para fazer login e inicie sua demonstração no ChatGPT. Basta ir clicando nos pontos indicados ao longo da jornada.',
     frameId: '2f8f32b8-2178-49d3-9a64-4f21aabb9d73',
   },
   {
